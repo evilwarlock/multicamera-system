@@ -575,6 +575,7 @@ Method_ethr = 1;
 
 Mobile_flag = 0;                          % 0: no mobile camera  1: mobile camera
 repeat = 1;                               % 0: A new setting  1: Repeat experiments with different parameters
+t_max = 0.5;                              % maximum time, long time= 2.5 short => 0.5
 
 FOVAngle = 60;                                                               % Angle of FOV
 FOVAngle = FOVAngle/180*pi;
@@ -588,7 +589,8 @@ x_max = 1.9;
 y_min = 0.1;
 y_max = 1.9;
 
-t = 0:0.0001:2.5;                                                               % Time setting
+
+t = 0:0.0001:t_max;                                                               % Time setting
 axislimits = [0 2 0 2];
 tau = 0.7;                                                                    % Parameter for Bargain
 N = 25;                                                                       % Times of Bargain iteration
@@ -779,11 +781,11 @@ end
 
 % E_Thr = 0;
 E_Thr = 0.1*Energy;                                                           % Energy left alert threshold
-
-Idle_Consumption = 0.0001;
+                
+Idle_Consumption = 0.0001;                                                      % Engergy comsumption when mobile camera is idle
 % Dist_Thr = 0.4;                                                               % Distance(Resolution) alert threshold
-Res_Thr = 0.3;
-Tracking_Consumption = 0.001;
+Res_Thr = 0.3;                                                                                  
+Tracking_Consumption = 0.001;                                                   % Engergy comsumption when mobile camera is tracking
 T_int = 250;
 
 
@@ -868,11 +870,11 @@ end
 
 rowname{nC+1} = 'Uti';
 
-tt1 = uitable('Position',[1350 350 300 200],'ColumnWidth',{40}, ...
+tt1 = uitable('Position',[1250 350 300 200],'ColumnWidth',{40}, ...
     'ColumnName', columnname(1:nO+1), ...
     'RowName', rowname(1:nC+1));
 
-tt2 = uitable('Position',[1350 150 300 200],'ColumnWidth',{40}, ...
+tt2 = uitable('Position',[1250 150 300 200],'ColumnWidth',{40}, ...
     'ColumnName', columnname(1:nO+1), ...
     'RowName', rowname(1:nC+1));
 
@@ -881,10 +883,10 @@ tt2 = uitable('Position',[1350 150 300 200],'ColumnWidth',{40}, ...
 %              'RowName', rowname(1:nC+1));
 
 cnames = {'Time','Assignment'};
-tt3 = uitable('Position',[1350 550 300 40],'ColumnWidth',{60}, ...
+tt3 = uitable('Position',[1250 550 300 40],'ColumnWidth',{60}, ...
     'ColumnName', cnames, 'RowName', 'Times');
 
-ttO = uitable('Position',[1350 50 300 100],'ColumnWidth',{40}, ...
+ttO = uitable('Position',[1250 50 300 100],'ColumnWidth',{40}, ...
     'ColumnName', columnname(1:nO), ...
     'RowName', rowname(1:nC));
 
