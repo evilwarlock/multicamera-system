@@ -567,9 +567,12 @@ W_MD = 0.5;     % weight for the distance between mobile camera and the object
 W_ME = 0.5;     % weight for the remaining energy of mobile camera
 % default set up
 Trajectory = 1;
-W_E = 0.4;
-W_R = 0.4;
-W_L = 0.2;
+% W_E = 0.4;
+% W_R = 0.4;
+% W_L = 0.2;
+W_E = 0;
+W_R = 0.7;
+W_L = 0.3;
 aerfa = 0.4;
 Updating_Method = 4;
 InitialE = 1;
@@ -577,13 +580,13 @@ Trigger = 0;
 Method_ethr = 1;
 
 Mobile_flag = 1;                          % 0: no mobile camera  1: mobile camera
-<<<<<<< HEAD
-repeat = 0;                               % 0: A new setting  1: Repeat experiments with different parameters
+% <<<<<<< HEAD
+repeat = 1;                               % 0: A new setting  1: Repeat experiments with different parameters
 t_max = 2.5;                              % maximum time, long time= 2.5 short => 0.5
-=======
+% =======
 E_flag = 0;                               % 0: does not take energy into account  1: take energy into account
 repeat = 1;                               % 0: A new setting  1: Repeat experiments with different parameters
->>>>>>> 074aae9baeafe0caf7c2279185e54ba1cbad1fd5
+% >>>>>>> 074aae9baeafe0caf7c2279185e54ba1cbad1fd5
 
 if (Mobile_flag == 0)
     W_E = 0;
