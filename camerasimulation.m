@@ -576,9 +576,9 @@ InitialE = 1;
 Trigger = 0;
 Method_ethr = 1;
 
-Mobile_flag = 0;                          % 0: no mobile camera  1: mobile camera
-repeat = 1;                               % 0: A new setting  1: Repeat experiments with different parameters
-t_max = 0.5;                              % maximum time, long time= 2.5 short => 0.5
+Mobile_flag = 1;                          % 0: no mobile camera  1: mobile camera
+repeat = 0;                               % 0: A new setting  1: Repeat experiments with different parameters
+t_max = 2.5;                              % maximum time, long time= 2.5 short => 0.5
 
 if (Mobile_flag == 0)
     W_E = 0;
